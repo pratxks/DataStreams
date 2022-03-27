@@ -1,0 +1,24 @@
+IT 2045C Computer Programming II Prof. Tom Wulf Lab 09: Java Data Streams Spring 2022 20 pts
+Explore the Java Data Stream Processing
+IntelliJ Project name: DataStreams Create a Swing GUI that:
+ Allows the user to load a text file using the JFileChooser
+ Asks the user to enter a search string into a textField
+ Uses java data stream processing to return the lines of the file that contain the search String. 
+Specifically use the Stream, and filter with a lambda expression to do this.
+GUI Notes:
+ I’m leaving this to you for the most part.
+ You should have two parallel scrolling textAreas. Display the original file on the left-hand side and the filtered file on the right-hand side
+ Provide the textField for the search string
+ Provide command buttons for
+o Load a file
+o Search the file (after a file is loaded only)
+o Quit
+Be sure to use the modern java file system classes Path and Files try (Stream lines = Files.lines(Paths.get(FILEPATH)))
+DO NOT THROW THE IOEXCEPTION ON MAIN be sure to handle the errors with the usual try catch mechanism.. NO credit if you do this!
+Provide screen shots which clearly show:
+- A shot of your source code that shows that you used the Steam approach here.
+- the JFileChooser selecting the file - clear side by side displays of the file and the filtered results for at least 3 sample files. 
+- Use 3 different search strings, that is a different one for each example.
+Submitting your Work:
+Use the Canvas Assignment mechanism to submit the link to your GitHub repo for this project and after inserting your screen and 
+code shots this file renamed LastnameFirstname _Lab_09.docx (using your actual name).

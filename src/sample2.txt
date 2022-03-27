@@ -1,0 +1,102 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package listmaker;
+
+import java.util.ArrayList; 
+import java.util.Scanner;
+
+/**
+ *
+ * @author Pratiksss
+ */
+public class ListMaker 
+{
+    private static ArrayList<String> myArrList = new ArrayList<>();
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) 
+    {
+        boolean quit = false;
+        String choice = "";
+        
+        Scanner in = new Scanner(System.in); 
+        
+        do 
+        {  
+            System.out.println("\nCurrent List is As follows\n");
+            printList();
+            
+            choice = SafeInput.getRegExString(in, "Enter Your Choice (Add - A/Delete - D/Print - P/Quit - Q)", "[AaDdPpQq]");
+            
+            if(choice.equalsIgnoreCase("Q"))
+            {
+                quit = SafeInput.getYNConfirm(in, "Do you Really Want to Quit");
+            }
+            else if(choice.equalsIgnoreCase("A"))
+            {
+                String addStr = SafeInput.getNonZeroLenString(in, "Enter Element to Add");
+                addToList(addStr);
+            }
+            else if(choice.equalsIgnoreCase("D"))
+            {
+                System.out.println("");
+                printNumberedList();
+                if(myArrList.size() == 0) 
+                {
+                    System.out.println("\nList is Empty");
+                }
+                else
+                {
+                    int delIndex = SafeInput.getRangedInt(in, "\nEnter Element index to Delete ", 1, myArrList.size());
+                    deleteFromList(delIndex);
+                }
+            }
+            else if(choice.equalsIgnoreCase("P"))
+            {
+                printList();
+            }
+        } while (!quit);
+    }
+    
+    // add element to list
+    private static void addToList(String element)
+    {
+        myArrList.add(element);
+    }
+    
+    // delete element from list at index listindex
+    private static void deleteFromList(int listIndex)
+    {
+        myArrList.remove(listIndex - 1);
+        System.out.println("\nElement Deleted Successfully\n");
+    }
+    
+    // display list elements
+    private static void printList()
+    {
+        if(myArrList.size() == 0)
+            System.out.println("List is Empty");
+        
+        for(int i=0; i<myArrList.size(); i++)
+        {
+            System.out.println(myArrList.get(i));
+        }
+    }
+    
+    // display list elements with index numbers
+    private static void printNumberedList()
+    {
+        if(myArrList.size() == 0)
+            System.out.println("List is Empty");
+        
+        for(int i=0; i<myArrList.size(); i++)
+        {
+            System.out.println((i + 1) + ")" + myArrList.get(i));
+        }
+    }
+}

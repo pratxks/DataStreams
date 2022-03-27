@@ -1,0 +1,39 @@
+Computer Programming II Prof. Tom Wulf Lab 6: Pizza Order GUI Program Spring Sem 2022
+Objective: Get practice with using the Java GUI methods, especially the components that are commonly 
+used in Web forms. For the rest of the course, all assignments will require Swing GUIs, 
+but this is the last one that will cover new features of the Swing system. Discussion: 
+Create a JFrame-based GUI application that allows a person to construct an order for pizza. 
+Name your IntelliJ project PizzaGUIForm and place it under GitHub source control. 
+You should have PizzaGUIFrame.java and PizzaGUIRunner.java files.
+After selecting the options and elements for the pizza, the user clicks the Order button 
+and the program displays the order and costs in a JTextArea within a JScrollPane. 
+For simplicity you can assume that the user only enters an order for one pizza. 
+The technical focus here is on the details of some of the additional JComponents 
+that are commonly used for form-based input: JCheckBox, JRadioButton, and JComboBoxComponents:
+ Create a JRadioButton set for the type of crust {Thin, Regular, Deep-dish}
+ Create a JComboBox for the size: {Small, Medium, Large, Super} The base cost is $8.00, $12.00, $16.00, $20.00.
+ Create a set of at least 6 Toppings using JCheckBox You can make totally humorous 
+toppings if you wish. (What would monster pizza have for ingredients?) Each topping costs an additional $1.00.
+ Each of these previous items should be in a JPanel and have a Titled border.
+ Include an additional JPanel with a JTextArea which will display the order as text similar to a receipt.
+ Add a final JPanel with 3 JButtons Order, Clear, and Quit.
+o Quit performs in the usual fashion. However, use a JOptionPane.ConfirmMessegeDialog to 
+ask the user if they are sure they want to quit.
+o The clear button will wipe the form (all components) so it is ready for a new order.
+o When the Order button is pressed the order is compiled from the settings of the various 
+GUI components and displayed as text in the JTextArea. This should be nicely formatted to look like a typical 
+cash register receipt. 
+Note that the tax rate is 7% (.07). : ========================================= Type of Crust & 
+Size Price Ingredient Price
+Sub-total: Amount Tax: Amount --------------------------------------------------------------------- 
+Total: Total =========================================
+Note that the items in bold on the example should appear on the receipt as well as the divider lines. 
+The other items will be replaced with the actual order. An order must have a Crust and Size choice 
+and at least one ingredient. An order may have every ingredient option. Sub-total is the sum of the 
+choices prior to calculating the tax. Tax is 7% of the order sub-total. Total is the sum of the sub-total and the tax.
+ Layout: place the button panel at the bottom. Put the JTextArea panel immediately above it. 
+I leave the layout of the rest of the panels to you with the caveat that you must not stack them vertically in one column. 
+Please experiment with the Layout a bit here. Strive for something that is pleasing to the eye and reflects basic UI design for usability.
+ Take several screen shots that establish that your program works correctly and paste them here in this document.
+ Submit a link.to your GitHub repo as well as this file with your screen shots renamed lastname_FirstName_Lab06.docx 
+using your name using the Canvas assignment link
